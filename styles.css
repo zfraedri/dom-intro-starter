@@ -1,0 +1,344 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------- GLOBAL/X-SMALL SCREEN STYLES ----------*/
+:root{
+	--deep-blue: #283040;
+	--med-blue: #3C5E73;
+	--light-blue: #7C9EA6;
+	--tan: #D9BCA3;
+	--cream: #F2DCC9;
+	--light-gray: #eaeaea;
+	--med-gray: #555;
+	--dark-gray: #222;
+
+	--transparent-cream: rgba(242, 220, 201, .6);
+
+	--code-font: 'Source Code Pro', monospace;
+	--body-font: 'Poppins', sans-serif;
+
+	--spread-shadow: -0.5rem 0.5rem 1rem var(--med-gray);
+	--small-shadow: -0.25rem 0.25rem 0.5rem var(--med-gray);
+	--filter-shadow: drop-shadow(-0.25rem 0.25rem 0.5rem var(--med-gray));
+
+	font-size: 16px;
+}
+
+body{
+	line-height: 1.45;
+	box-sizing: border-box;
+	background-color: var(--transparent-cream);
+	color: var(--dark-gray);
+	font-family: var(--body-font);
+}
+
+/*----- SKIP LINK STYLES -----*/
+/*From: https://webaim.org/techniques/css/invisiblecontent/*/
+#skip{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+ 
+#skip:focus{
+	position: static;
+	width: auto;
+	height: auto;
+}
+
+/*----- HEADER STYLES -----*/
+header{
+	background-color: var(--deep-blue);
+	color: var(--cream);
+	padding: 1rem 0;
+	border-bottom: 5px solid var(--med-blue);
+}
+
+/*----- HEADING STYLES -----*/
+h1, h2, h3{
+	font-family: var(--body-font);
+	font-weight: 900;
+	color: var(--deep-blue);
+	text-align: center;
+	max-width: 52ch;
+}
+
+h1{
+	font-size: 2rem;
+	margin: 0 0.25rem 1rem 0.25rem;
+	color: var(--cream);
+}
+
+h2{
+	font-size: 1.65rem;
+	margin: 1rem auto;
+}
+
+h3{
+	font-size: 1.25rem;
+	margin: 0.5rem auto;
+}
+
+/*----- HIDDEN HEADING STYLES -----*/
+/*From: https://webaim.org/techniques/css/invisiblecontent/*/
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/*----- NAV STYLES -----*/
+nav{
+	background-color: var(--med-blue);
+	padding: 0.05rem 0;
+}
+
+nav a{
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	background-color: var(--light-blue);
+	color: var(--deep-blue);
+	margin: 0.75rem 0;
+	text-align: center;
+	width: calc(100% - 2rem);
+}
+
+/*----- SECTION STYLES -----*/
+section{
+	padding: 1rem;
+	border-bottom: 5px solid var(--med-blue);
+}
+
+section > section{
+	padding: 0;
+	border: none;
+}
+
+/*----- TEXT STYLES -----*/
+p{
+	padding: 1rem 0;
+	max-width: 65ch;
+	margin: 0 auto;
+}
+
+.bold, strong{
+	font-weight: bold;
+}
+
+/*----- CODE STYLES -----*/
+code{
+	display: block;
+	font-family: var(--code-font);
+	padding: 0 1rem;
+	background-color: var(--deep-blue);
+	color: var(--cream);
+	width: fit-content;
+	max-width: calc(100% - 2rem);
+	overflow: scroll;
+	margin: 0 auto;
+	box-shadow: var(--small-shadow);
+}
+
+/*----- IMAGE/SVG STYLES -----*/
+img, svg{
+	display: block;
+	margin: 1rem auto;
+}
+
+img{
+	filter: var(--filter-shadow);
+}
+
+svg{
+	width: 100%;
+	max-width: 100px;
+}
+
+/*----- TAG NAME STYLES -----*/
+#image_grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+	gap: 1rem;
+	align-items: center;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#image_grid h3, #image_grid p{
+	grid-column: 1/-1;
+}
+
+/*----- SVG CONTAINER STYLES -----*/
+#svgs{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 0.5rem;
+	max-width: 675px;
+	margin: 0 auto;
+}
+
+#svgs h3, #svgs p{
+	grid-column: 1/-1;
+}
+
+/*----- CHANGE CONTENT STYLES -----*/
+.content_list{
+	width: 100%;
+	max-width: fit-content;
+	margin: 0 auto;
+	list-style-type: square;
+}
+
+/*----- HIDDEN LINK SPAN STYLES -----*/
+#remove span{
+	display: block;
+	width: fit-content;
+	margin: 1rem auto;
+}
+
+#remove a{
+	color: var(--deep-blue);
+}
+
+/*----- FOOTER STYLES -----*/
+
+footer{
+	padding: 2rem;
+	text-align: center;
+	background-color: var(--deep-blue);
+	color: var(--cream);
+}
+
+footer a{
+	display: inline;
+	color: var(--cream);
+	padding: 0.25rem;
+}
+
+/*----- CLASSES USED IN THE ACTIVITY -----*/
+.tan{
+	color: var(--tan);
+}
+
+/*----- HOVER STYLES -----*/
+@media(hover: hover){
+	nav a:hover{
+		background-color: var(--deep-blue);
+		color: var(--light-blue);
+	}
+
+	#remove a:hover{
+		color: var(--med-blue);
+	}
+}
+
+
+/*---------- SMALL SCREEN STYLES ----------*/
+@media screen and (min-width: 550px){
+	nav{
+		/*background-color: var(--deep-blue);*/
+	}
+
+	nav ul{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		padding: 0.5rem 0;
+	}
+	nav li{
+		background-color: var(--light-blue);
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+	}
+
+	nav a{
+		margin: 0;
+	}
+}
+
+
+/*---------- MEDIUM SCREEN STYLES ----------*/
+@media screen and (min-width: 800px){
+	nav ul{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+
+
+/*---------- LARGE SCREEN STYLES ----------*/
+@media screen and (min-width: 1000px){
+	h1{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	nav ul{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
