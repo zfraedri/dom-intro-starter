@@ -31,3 +31,8 @@ for(let i=0; i < svgs.length; i++){
 document.querySelector("#query .bold").style.color = "#7C9EA6";
 
 // Sixth Section: Changing DOM Node Content
+document.querySelector(".content_list li:first-of-type").textContent ="This is new list item text";
+document.querySelectorAll(".content_list li")[2].innerHTML += "<strong>Zachary Fraedrich</strong>";
+
+// Seventh Section: Removing an Attribute
+document.querySelector("#remove a").removeAttribute("hidden")
